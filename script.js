@@ -1,6 +1,9 @@
 const poster = document.getElementById("poster");
 const posterPath = document.getElementsByClassName("poster-path")[0];
 
+const discoverContent = document.getElementById("discover-content");
+const discImg = document.getElementById("disc-img");
+
 function switchCard(id) {
     if (posterPath) {
         switch (id) {
@@ -72,4 +75,103 @@ function switchCard(id) {
                 console.log("Invalid ID");
         }
     }
+}
+
+function switchDiscoverImage(id) {
+    switch (id) {
+        case "ps5Slim":
+            discoverContent.innerHTML = `
+                <h3>PlayStation 5 Console</h3>
+                <p>Experience an all-new generation of incredible PlayStation games.</p>
+            `
+            discImg.innerHTML = `
+                <img src="high_res_images/ps5-slim-disc-console-featured-hardware-image-block-02-en-15nov23.jpeg" alt="ps5-slim-disc-console-featured-hardware-image-block-02-en-15nov23"
+                >
+            `;
+            break;
+        case "ps5Pro":
+            discoverContent.innerHTML = `
+                <h3>PlayStation 5 Pro Console</h3>
+                <p>Play PS5® games with the most impressive visuals ever possible on a PlayStation console.</p>
+            `
+            discImg.innerHTML = `
+                <img src="high_res_images/ps5-pro-dualsense-image-block-01-en-18sep24.jpeg" alt="ps5-pro-dualsense-image-block-01-en-18sep24">
+            `;
+            break;
+        case "dualsenseRange":
+            discoverContent.innerHTML = `
+                <h3>DualSense™ Wireless Controller</h3>
+                <p>Immerse yourself in the gaming experience with a controller the supports responsive haptic feedback and dynamic trigger effects.</p>
+            `
+            discImg.innerHTML = `
+                <img src="high_res_images/dualsense-range-stacked-image-block-01-en-11feb22.jpeg" alt="dualsense-range-stacked-image-block-01-en-11feb22">
+            `;
+            break;
+        case "eliteHeadset":
+            discoverContent.innerHTML = `
+                <h3>PULSE Elite™ Wireless Headset</h3>
+                <p>Enjoy lifelike gaming audio in a comfortable headset design equipped with a retractable microphone and built-in long-life battery</p>
+            `
+            discImg.innerHTML = `
+                <img src="high_res_images/PULSE-Elite-headset-thumbnail-01-en-08sep23.jpeg" alt="PULSE-Elite-headset-thumbnail-01-en-08sep23">
+            `;
+            break;
+        case "exploreEarbuds":
+            discoverContent.innerHTML = `
+                <h3>PULSE Explore™ Wireless Earbuds</h3>
+                <p>Enjoy lifelike gaming audio wherever play takes you with a portable design equipped with hidden microphones and a companion charging case.</p>
+            `
+            discImg.innerHTML = `
+                <img src="high_res_images/PULSE-Explore-earbuds-image-block-01-en-08sep23.jpeg" alt="PULSE-Explore-earbuds-image-block-01-en-08sep23">
+            `;
+            break;
+        case "dualsenseEdge":
+            discoverContent.innerHTML = `
+                <h3>DualSense Edge™ Wireless Controller</h3>
+                <p>Get an edge in gameplay with remappable buttons, tuneable triggers and sticks, changeable stick caps, back buttons, and more.</p>
+            `
+            discImg.innerHTML = `
+                <img src="high_res_images/dualsense-edge-featured-hardware-image-block-01-en-11aug23.jpeg" alt="dualsense-edge-featured-hardware-image-block-01-en-11aug23">
+            `;
+            break;
+        case "accessController":
+            discoverContent.innerHTML = `
+                <h3>Access™ Controller</h3>
+                <p>A highly customisable PlayStation®5 controller kit designed to make gaming more accessible.</p>
+            `
+            discImg.innerHTML = `
+                <img src="high_res_images/access-controller-featured-hardware-image-block-01-en-12oct23.jpeg" alt="access-controller-featured-hardware-image-block-01-en-12oct23">
+            `;
+            break;
+        case "consoleCover":
+            discoverContent.innerHTML = `
+                <h3>PS5 Console Covers</h3>
+                <p>Personalise your PlayStation 5 or PlayStation 5 Digital Edition console with a vibrant array of new colour options.</p>
+            `
+            discImg.innerHTML = `
+                <img src="high_res_images/ps5-console-cover-range-image-block-01-en-16feb22.jpeg" alt="ps5-console-cover-range-image-block-01-en-16feb22">
+            `;
+            break;
+        case "mediaRemote":
+            discoverContent.innerHTML = `
+                <h3>Media Remote</h3>
+                <p>Conveniently control movies, streaming services and more on your PS5 console with an intuitive layout.</p>
+            `
+            discImg.innerHTML = `
+                <img src="high_res_images/media-remote-featured-hardware-image-block-01-en-11aug23.jpeg" alt="media-remote-featured-hardware-image-block-01-en-11aug23">
+            `;
+            break;
+        case "hdCamera":
+            discoverContent.innerHTML = `
+                <h3>HD Camera</h3>
+                <p>Add yourself to your gameplay videos and broadcasts with smooth, sharp, full-HD capture. </p>
+            `
+            discImg.innerHTML = `
+                <img src="high_res_images/hd-camera-featured-hardware-image-block-01-en-11aug23.jpeg" alt="hd-camera-featured-hardware-image-block-01-en-11aug23">
+            `;
+            break;
+        default:
+            console.log("Invalid ID");
+    }
+
 }

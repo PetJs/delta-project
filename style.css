@@ -124,7 +124,7 @@
     margin-bottom: 8px;
 }
 
-.disc-img{
+.disc-img img{
     width: 750px;
 }
 
@@ -160,6 +160,7 @@
 }
 
 .disc-card{
+    cursor: pointer;
     width: 22vw;
     height: 20vh;
     padding: 16px;
