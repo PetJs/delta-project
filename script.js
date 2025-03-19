@@ -4,6 +4,47 @@ const posterPath = document.getElementsByClassName("poster-path")[0];
 const discoverContent = document.getElementById("discover-content");
 const discImg = document.getElementById("disc-img");
 
+
+const container = document.querySelector('.disc-card-container');
+const prevBtn = document.getElementById('prevBtn');
+const nextBtn = document.getElementById('nextBtn');
+const cards = document.querySelectorAll('.disc-card');
+
+let currentIndex = 0;
+
+// Set the first card as active initially
+cards[0].classList.add('active');
+
+// Function to update active card
+function updateActiveCard(index) {
+    // Remove 'active' class from all cards
+    cards.forEach(card => card.classList.remove("active"));
+
+    // Add 'active' class to clicked card
+    const activeCard = cards[index];
+    activeCard.classList.add("active");
+
+    // Update global index
+    currentIndex = index;
+
+    // Scroll smoothly to selected card
+    activeCard.scrollIntoView({ behavior: "smooth", block: "nearest" });
+
+    // Get card ID & update the discover section
+    const cardId = activeCard.getAttribute("id");
+    if (cardId) {
+        switchDiscoverImage(cardId);
+    }
+}
+
+// Attach event listeners to each card
+cards.forEach((card, index) => {
+    card.addEventListener("click", function () {
+        updateActiveCard(index);
+    });
+});
+
+
 function switchCard(id) {
     if (posterPath) {
         switch (id) {
@@ -88,8 +129,10 @@ function switchDiscoverImage(id) {
                 <img src="high_res_images/ps5-slim-disc-console-featured-hardware-image-block-02-en-15nov23.jpeg" alt="ps5-slim-disc-console-featured-hardware-image-block-02-en-15nov23"
                 >
             `;
+            cards[currentIndex].classList.add('active')
             break;
         case "ps5Pro":
+            cards[currentIndex].classList.add('active')
             discoverContent.innerHTML = `
                 <h3>PlayStation 5 Pro Console</h3>
                 <p>Play PS5® games with the most impressive visuals ever possible on a PlayStation console.</p>
@@ -175,3 +218,20 @@ function switchDiscoverImage(id) {
     }
 
 }
+
+
+
+prevBtn.addEventListener('click', function() {
+    if (currentIndex > 0) {
+        currentIndex--;
+        updateActiveCard(currentIndex);
+    }
+});
+
+nextBtn.addEventListener('click', function() {
+    if (currentIndex < cards.length - 1) {
+        currentIndex++;
+        updateActiveCard(currentIndex);
+    }
+});
+

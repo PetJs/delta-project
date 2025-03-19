@@ -64,14 +64,13 @@
                     >
                 </div>
             </div>
+
+            <div class="prev-btn">
+                <button id="prevBtn">&lt;</button>
+            </div>
+            
             <div class="disc-card-container">
-                <div class="prev-btn">
-                    <button>&lt;</button>
-                </div>
-                <div class="next-btn">
-                    <button>&gt;</button>
-                </div>
-                <div class="disc-card" id="ps5Slim" onclick="switchDiscoverImage(this.id)">
+                <div class="disc-card active" id="ps5Slim" onclick="switchDiscoverImage(this.id)">
                     <img src="high_res_images/ps5-slim-disc-console-featured-hardware-image-block-02-en-15nov23.jpeg" alt="ps5-slim-disc-console-featured-hardware-image-block-02-en-15nov23">
                 </div>
                 <div class="disc-card" id="ps5Pro" onclick="switchDiscoverImage(this.id)">
@@ -101,6 +100,10 @@
                 <div class="disc-card" id="hdCamera">
                     <img src="high_res_images/hd-camera-featured-hardware-image-block-01-en-11aug23.jpeg" alt="hd-camera-featured-hardware-image-block-01-en-11aug23">
                 </div>
+            </div>
+
+            <div class="next-btn" >
+                <button id="nextBtn">&gt;</button>
             </div>
         </section>
     </main>
