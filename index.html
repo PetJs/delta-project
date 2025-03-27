@@ -43,7 +43,71 @@
         </div>
     </header>
 
-    <section class="new-releases">
+    
+    <main>
+        <!-- DISCOVER ALL SECTION -->
+        <section class="disc-container">
+            <div class="discover-all">
+                <div class="text-container">
+                    <h2>Discover all PS5 consoles and accessories</h2>
+                    <div class="sub-text" id="discover-content">
+                        <h3>PlayStation 5 Console</h3>
+                        <p>Experience an all-new generation of incredible PlayStation games.</p>
+                    </div>
+                    <div class="btn-container">
+                        <button class="disc-btn btn-blue">Find out more</button>
+                        <button class="disc-btn btn-orange">Buy now</button>
+                    </div>
+                </div>
+                <div class="disc-img" id="disc-img">
+                    <img src="high_res_images/ps5-slim-disc-console-featured-hardware-image-block-02-en-15nov23.jpeg" alt="ps5-slim-disc-console-featured-hardware-image-block-02-en-15nov23"
+                    >
+                </div>
+            </div>
+
+            <div class="prev-btn">
+                <button id="prevBtn">&lt;</button>
+            </div>
+            
+            <div class="disc-card-container">
+                <div class="disc-card active" id="ps5Slim" onclick="switchDiscoverImage(this.id)">
+                    <img src="high_res_images/ps5-slim-disc-console-featured-hardware-image-block-02-en-15nov23.jpeg" alt="ps5-slim-disc-console-featured-hardware-image-block-02-en-15nov23">
+                </div>
+                <div class="disc-card" id="ps5Pro" onclick="switchDiscoverImage(this.id)">
+                    <img src="high_res_images/ps5-pro-dualsense-image-block-01-en-18sep24.jpeg" alt="ps5-pro-dualsense-image-block-01-en-18sep24">
+                </div>
+                <div class="disc-card" id="dualsenseRange" onclick="switchDiscoverImage(this.id)">
+                    <img src="high_res_images/dualsense-range-stacked-image-block-01-en-11feb22.jpeg" alt="dualsense-range-stacked-image-block-01-en-11feb22">
+                </div>
+                <div class="disc-card" id="eliteHeadset" onclick="switchDiscoverImage(this.id)">
+                    <img src="high_res_images/PULSE-Elite-headset-thumbnail-01-en-08sep23.jpeg" alt="PULSE-Elite-headset-thumbnail-01-en-08sep23">
+                </div>
+                <div class="disc-card" id="exploreEarbuds" onclick="switchDiscoverImage(this.id)">
+                    <img src="high_res_images/PULSE-Explore-earbuds-image-block-01-en-08sep23.jpeg" alt="PULSE-Explore-earbuds-image-block-01-en-08sep23">
+                </div>
+                <div class="disc-card" id="dualsenseEdge" onclick="switchDiscoverImage(this.id)">
+                    <img src="high_res_images/dualsense-edge-featured-hardware-image-block-01-en-11aug23.jpeg" alt="dualsense-edge-featured-hardware-image-block-01-en-11aug23">
+                </div>
+                <div class="disc-card" id="accessController" onclick="switchDiscoverImage(this.id)">
+                    <img src="high_res_images/access-controller-featured-hardware-image-block-01-en-12oct23.jpeg" alt="access-controller-featured-hardware-image-block-01-en-12oct23">
+                </div>
+                <div class="disc-card" id="consoleCover" onclick="switchDiscoverImage(this.id)">
+                    <img src="high_res_images/ps5-console-cover-range-image-block-01-en-16feb22.jpeg" alt="ps5-console-cover-range-image-block-01-en-16feb22">
+                </div>
+                <div class="disc-card" id="mediaRemote" onclick="switchDiscoverImage(this.id)">
+                    <img src="high_res_images/media-remote-featured-hardware-image-block-01-en-11aug23.jpeg" alt="media-remote-featured-hardware-image-block-01-en-11aug23">
+                </div>
+                <div class="disc-card" id="hdCamera">
+                    <img src="high_res_images/hd-camera-featured-hardware-image-block-01-en-11aug23.jpeg" alt="hd-camera-featured-hardware-image-block-01-en-11aug23">
+                </div>
+            </div>
+
+            <div class="next-btn" >
+                <button id="nextBtn">&gt;</button>
+            </div>
+        </section>
+
+        <section class="new-releases">
             <h2 class="releases-announce">Great PS4 & PS5 games out now or coming soon</h2>
         <div class="pill-container">
             <div class="pill new active" id="new-pill"><p>New releases</p></div>
@@ -172,9 +236,49 @@
 
     </section>
 
-    <section class="testing">
-        <div>Hello world</div>
-    </section>
+        <!-- PLAYSTATION PLUS SECTION -->
+        <section class="playstation">
+            <div class="playstation-header">
+                <div class="playstation-header-logo">
+                    <img src="high_res_images/ps-plus-logo-removebg-preview.png" alt="ps-plus-logo" width="72px">
+                    <h1>PlayStation Plus</h1>
+                </div>
+                <h2>Discover PlayStation Plus</h2>
+                <p>Play hundreds of incredible PS5, PS4 and classic PlayStation games, and discover epic adventures, unique indies, family favourites, and everything in between.</p>
+            </div>
+            <div class="playstation-card-wrapper">
+                <button class="btn-prev">&lt;</button>
+                <div class="playstation-card-container">
+                    <div class="playstation-card">
+                        <img src="high_res_images/ps-plus-essential-image-block-mobile-01-09jan25$en.jpeg" alt="ps-plus-essential">
+                        <div class="playstation-card-content">
+                            <img src="high_res_images/ps-plus-esstential-plan-badge-01-12may22$en.svg" alt="essential-badge">
+                            <h2>PlayStation Plus Essential</h2>
+                            <p>Enjoy all the PlayStation Plus benefits from the Extra and Essential plans, plus exclusive benefits like game trials, cloud streaming, and the Classics Catalogue.</p>
+                        </div>
+                    </div>
+                    <div class="playstation-card">
+                        <img src="high_res_images/ps-plus-extra-image-block-mobile-01-09jan25$en.jpeg" alt="ps-plus-extra">
+                        <div class="playstation-card-content">
+                            <img src="high_res_images/ps-plus-extra-plan-badge-01-12may22$en.svg" alt="extra-badge">
+                            <h2>PlayStation Plus Extra</h2>
+                            <p>Enjoy all the PlayStation Plus benefits from the Extra and Essential plans, plus exclusive benefits like game trials, cloud streaming, and the Classics Catalogue.</p>
+                        </div>
+                    </div>
+                    <div class="playstation-card">
+                        <img src="high_res_images/ps-plus-premium-image-block-mobile-01-09jan25$en.jpeg" alt="ps-plus-premium">
+                        <div class="playstation-card-content">
+                            <img src="high_res_images/ps-plus-premium-plan-badge-01-12may22$en.svg" alt="premium-badge">
+                            <h2>PlayStation Plus Premium</h2>
+                            <p>Enjoy all the PlayStation Plus benefits from the Extra and Essential plans, plus exclusive benefits like game trials, cloud streaming, and the Classics Catalogue.</p>
+                        </div>
+                    </div>
+                </div>
+                <button class="btn-next">&gt;</button>
+            </div>            
+        </section>
+
+    </main>
 
 
     <script src="script.js"></script>
