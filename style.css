@@ -2,9 +2,12 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    /* outline: 1px solid red; */
 }
 
-
+body {
+    font-family: Arial, sans-serif;
+}
 
 /* Full-screen hero section */
 .poster-path {
@@ -335,3 +338,105 @@
 }
 
 
+/* NEW GAME RELEASES */
+
+p {
+    font-size: 14px;
+}
+
+.new-releases {
+    position: relative;
+    background-color: #000;
+    color: #fff;
+    height: 154vh;
+    text-align: center;
+    padding-top: 48px;
+    /* overflow-x: hidden; */
+}
+
+.releases-announce { 
+    margin-bottom: 16px;
+    padding-bottom: 14px;
+}
+
+.pill-container {
+    position: sticky;
+    top: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: auto;
+    margin-bottom: 23px;
+    background-color: #1a1b1e;
+    height: 38px;
+    width: 230px;
+    border-radius: 50px;
+    z-index: 13;
+}
+
+.pill {
+    width: 120px;
+    height: inherit;
+    padding: 10px 14px;
+    border-radius: 50px;
+    transition: background-color 0.3s ease;
+}
+
+
+
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    column-gap: 13px;
+    row-gap: 48px;
+    padding: 21px 141px 0 141px;
+    transition: opacity 0.3s ease-in-out;
+}
+
+.grid-item {
+    width: 185px;
+    height: 185px;;
+}
+
+.grid-item img {
+    max-width: 185px;
+    width: 100%;
+    height: inherit;
+    border-radius: 10px;
+    object-fit: cover;
+    transition: filter 0.3s ease, transform 0.3s ease
+}
+
+.title {
+    text-align: left;
+}
+
+/* INTERACTIVITY */
+.pill:not(.active):hover {
+    color: #0070CC;
+}
+
+.grid-container:hover:has(.grid-item:hover) .grid-item:not(:hover)  {
+    filter: brightness(50%);
+}
+
+.grid-item:hover img{
+    transform: scale(1.03);
+}
+
+/*SCRIPT STYLING*/
+
+.active {
+    background-color: #fff;
+    color: #1a1b1e;
+}
+
+.not-active-mode {
+    display: none;
+    opacity: 0;
+}
+
+.testing {
+    background-color: blue;
+}
