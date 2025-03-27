@@ -235,3 +235,28 @@ nextBtn.addEventListener('click', function() {
     }
 });
 
+const playStationContainer = document.querySelector('.playstation-card-container');
+const pprevButton = document.querySelector('.btn-prev');
+const nnextButton = document.querySelector('.btn-next');
+
+let scrollAmount = 0;
+
+pprevButton.addEventListener('click', () => {
+    const cardWidth = playStationContainer.querySelector('.playstation-card').offsetWidth;
+    scrollAmount -= cardWidth + 20; // Subtract card width and gap
+    playStationContainer.scrollTo({
+        left: scrollAmount,
+        behavior: 'smooth',
+    });
+});
+
+nnextButton.addEventListener('click', () => {
+    const cardWidth = playStationContainer.querySelector('.playstation-card').offsetWidth;
+    scrollAmount += cardWidth + 20; // Add card width and gap
+    playStationContainer.scrollTo({
+        left: scrollAmount,
+        behavior: 'smooth',
+    });
+});
+
+
