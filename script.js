@@ -12,6 +12,13 @@ const cards = document.querySelectorAll('.disc-card');
 
 let currentIndex = 0;
 
+// NEW RELEASES VARIABLES
+let newBtn = document.getElementById('new-pill');
+let comingBtn = document.getElementById('coming-pill');
+
+let newRelease = document.getElementById('just-released');
+let comingSoon = document.getElementById('coming-soon');
+
 // Set the first card as active initially
 cards[0].classList.add('active');
 
@@ -259,4 +266,34 @@ nnextButton.addEventListener('click', () => {
     });
 });
 
+// NEW RELEASES
+function switchPill(pillOne, gridOne, pillTwo, gridTwo) {
+    if (!pillOne.classList.contains('active')) {
+        pillOne.classList.add('active');
+        pillTwo.classList.remove('active');
 
+
+        gridTwo.style.opacity = "0";
+
+        setTimeout(() => {
+            gridTwo.classList.add('not-active-mode');
+            gridTwo.style.display = "none";
+
+
+            gridOne.style.display = "grid";
+            gridOne.style.opacity = "0";
+
+            setTimeout(() => {
+                gridOne.style.opacity = "1";
+            }, 20);
+        }, 200);
+    }
+}
+
+newBtn.addEventListener('click', () => {
+    switchPill(newBtn, newRelease, comingBtn, comingSoon);
+})
+
+comingBtn.addEventListener('click', () => {
+    switchPill(comingBtn, comingSoon, newBtn, newRelease);
+})
