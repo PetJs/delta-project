@@ -266,7 +266,6 @@ nnextButton.addEventListener('click', () => {
     });
 });
 
-
 // NEW RELEASES
 function switchPill(pillOne, gridOne, pillTwo, gridTwo) {
     if (!pillOne.classList.contains('active')) {
