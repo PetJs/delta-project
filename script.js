@@ -297,3 +297,34 @@ newBtn.addEventListener('click', () => {
 comingBtn.addEventListener('click', () => {
     switchPill(comingBtn, comingSoon, newBtn, newRelease);
 })
+
+// FOr infinite carousel
+const containerr = document.querySelector('.card-container');
+const prevvButton = document.querySelector('.btnprev');
+const nexttButton = document.querySelector('.btnnext');
+
+// Function to move to the next card
+nexttButton.addEventListener('click', () => {
+    const firstCard = containerr.firstElementChild;
+    containerr.style.transition = 'transform 0.5s ease-in-out';
+    containerr.style.transform = 'translateX(-33.33%)';
+
+    setTimeout(() => {
+        containerr.style.transition = 'none';
+        containerr.style.transform = 'translateX(0)';
+        containerr.appendChild(firstCard); // Move the first card to the end
+    }, 500);
+});
+
+// Function to move to the previous card
+prevvButton.addEventListener('click', () => {
+    const lastCard = containerr.lastElementChild;
+    containerr.style.transition = 'none';
+    containerr.insertBefore(lastCard, containerr.firstElementChild); // Move the last card to the front
+    containerr.style.transform = 'translateX(-33.33%)';
+
+    setTimeout(() => {
+        containerr.style.transition = 'transform 0.5s ease-in-out';
+        containerr.style.transform = 'translateX(0)';
+    }, 0);
+});
