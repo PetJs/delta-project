@@ -1,3 +1,12 @@
+window.addEventListener("scroll", function() {
+    let navbar = document.getElementById("navbar");
+    if (window.scrollY > 50) {
+        navbar.classList.add("sticky");
+    } else {
+        navbar.classList.remove("sticky");
+    }
+});
+
 const poster = document.getElementById("poster");
 const posterPath = document.getElementsByClassName("poster-path")[0];
 
@@ -328,7 +337,7 @@ prevvButton.addEventListener('click', () => {
         containerr.style.transform = 'translateX(0)';
     }, 0);
 });
-=======
+
 
 newBtn.addEventListener('click', () => {
     switchPill(newBtn, newRelease, comingBtn, comingSoon);
