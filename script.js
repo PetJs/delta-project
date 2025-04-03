@@ -252,28 +252,43 @@ nextBtn.addEventListener('click', function() {
 });
 
 const playStationContainer = document.querySelector('.playstation-card-container');
-const pprevButton = document.querySelector('.btn-prev');
-const nnextButton = document.querySelector('.btn-next');
+const prevButton = document.querySelector('.btn-prev');
+const nextButton = document.querySelector('.btn-next');
 
-let scrollAmount = 0;
+// Duplicate the content so that we have two identical sets of cards
+playStationContainer.innerHTML += playStationContainer.innerHTML;
 
-pprevButton.addEventListener('click', () => {
-    const cardWidth = playStationContainer.querySelector('.playstation-card').offsetWidth;
-    scrollAmount -= cardWidth + 20; // Subtract card width and gap
-    playStationContainer.scrollTo({
-        left: scrollAmount,
-        behavior: 'smooth',
-    });
+// Determine the width 
+const cardWidth = playStationContainer.firstElementChild.offsetWidth;
+
+nextButton.addEventListener('click', () => {
+  playStationContainer.scrollBy({
+    left: cardWidth,
+    behavior: 'smooth'
+  });
 });
 
-nnextButton.addEventListener('click', () => {
-    const cardWidth = playStationContainer.querySelector('.playstation-card').offsetWidth;
-    scrollAmount += cardWidth + 20; // Add card width and gap
-    playStationContainer.scrollTo({
-        left: scrollAmount,
-        behavior: 'smooth',
-    });
+prevButton.addEventListener('click', () => {
+  playStationContainer.scrollBy({
+    left: -cardWidth,
+    behavior: 'smooth'
+  });
 });
+
+playStationContainer.addEventListener('scroll', () => {
+  const totalScrollWidth = playStationContainer.scrollWidth;
+  const halfScrollWidth = totalScrollWidth / 2;
+
+  if (playStationContainer.scrollLeft >= halfScrollWidth) {
+    playStationContainer.scrollLeft -= halfScrollWidth;
+  }
+  else if (playStationContainer.scrollLeft < 0) {
+    playStationContainer.scrollLeft += halfScrollWidth;
+  }
+});
+
+
+
 
 // NEW RELEASES
 function switchPill(pillOne, gridOne, pillTwo, gridTwo) {
