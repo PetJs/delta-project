@@ -328,3 +328,68 @@ prevvButton.addEventListener('click', () => {
         containerr.style.transform = 'translateX(0)';
     }, 0);
 });
+=======
+
+newBtn.addEventListener('click', () => {
+    switchPill(newBtn, newRelease, comingBtn, comingSoon);
+})
+
+comingBtn.addEventListener('click', () => {
+    switchPill(comingBtn, comingSoon, newBtn, newRelease);
+})
+
+
+// 
+// PLAYSTATION STORE
+
+document.addEventListener("DOMContentLoaded", function () {
+    const carousel = document.querySelector(".blog-card-holder");
+    const prevBlogBtn = document.querySelector(".carousel-prev");
+    const nextBlogBtn = document.querySelector(".carousel-next");
+    const cards = document.querySelectorAll(".blog-card");
+    
+    let scrollAmount = 0;
+    const cardWidth = cards[0].offsetWidth + 14; // Adding gap
+    const totalCards = cards.length;
+    const maxScroll = carousel.scrollWidth - carousel.clientWidth;
+    
+    function updateButtons() {
+        prevBlogBtn.style.opacity = "1";
+        nextBlogBtn.style.opacity = "1";
+    }
+    
+    prevBlogBtn.addEventListener("click", function () {
+        if (scrollAmount > 0) {
+            scrollAmount -= cardWidth;
+            carousel.scrollTo({ left: scrollAmount, behavior: "smooth" });
+        } else {
+            // Loop seamlessly to last item
+            scrollAmount = maxScroll + cardWidth;
+            carousel.scrollTo({ left: scrollAmount, behavior: "instant" });
+            setTimeout(() => {
+                scrollAmount -= cardWidth;
+                carousel.scrollTo({ left: scrollAmount, behavior: "smooth" });
+            }, 50);
+        }
+        updateButtons();
+    });
+    
+    nextBlogBtn.addEventListener("click", function () {
+        if (scrollAmount < maxScroll) {
+            scrollAmount += cardWidth;
+            carousel.scrollTo({ left: scrollAmount, behavior: "smooth" });
+        } else {
+            // Loop seamlessly to first item
+            scrollAmount = -cardWidth;
+            carousel.scrollTo({ left: scrollAmount, behavior: "instant" });
+            setTimeout(() => {
+                scrollAmount = 0;
+                carousel.scrollTo({ left: scrollAmount, behavior: "smooth" });
+            }, 50);
+        }
+        updateButtons();
+    });
+    
+    updateButtons();
+});
+
