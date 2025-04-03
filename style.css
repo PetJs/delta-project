@@ -60,7 +60,7 @@ body {
   font-size: 12px;
 }
 .sign-in {
-  background: #2a73b3;
+  background: var(--ps-blue);
   color: white;
   padding: 3px 15px;
   border-radius: 15px;
@@ -188,7 +188,7 @@ body {
 
 .sub-text h3 {
   font-size: 1.2em;
-  color: rgb(59, 59, 209);
+  color: var(--ps-blue);
   margin-bottom: 8px;
 }
 
@@ -274,7 +274,7 @@ body {
 .next-btn button {
   width: 40px;
   height: 40px;
-  background-color: rgba(0, 0, 255, 0.8);
+  background-color: var(--ps-blue);
   border-radius: 50%;
   border: none;
   font-size: 24px;
@@ -307,7 +307,7 @@ body {
 }
 
 .playstation-btn {
-  background-color: blue;
+  background-color: var(--ps-blue);
   color: white;
   width: auto;
   font-size: 18px;
@@ -484,6 +484,12 @@ p {
   transition: opacity 0.3s ease-in-out;
 }
 
+@media screen and (min-width: 1439px) {
+    .grid-container {
+      grid-template-columns: repeat(6, 1fr);
+    }
+  }
+
 .grid-item {
   width: 185px;
   height: 185px;
@@ -525,10 +531,6 @@ p {
 .not-active-mode {
   display: none;
   opacity: 0;
-}
-
-.testing {
-    background-color: var(--ps-blue);
 }
 
 .anniversary {
